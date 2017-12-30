@@ -1,0 +1,38 @@
+<% content_for :title, "Sign up" %>
+<div class="container">
+  <div class="columns pt-1">
+    <div class="column col-xs-12 col-sm-10 col-md-8 col-lg-6 col-xl-6 col-mx-auto">
+      <div class="card card-form p-1">
+        <div class="card-header">
+          <h2 class="text-script">Sign up</h2>
+        </div>
+        <div class="card-body">
+          <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+            <%#= devise_error_messages! %>
+
+            <div class="step-pane active pt-1" data-step='1'>
+
+              <%= f.input :email %>
+
+              <%= f.input :password %>
+              <%= f.input :password_confirmation, hint: "#{@minimum_password_length} characters minimum" %>
+
+              <!-- <a href="#" class="btn btn-primary btn-block">Next</a> -->
+
+            </div>
+
+            <div class="actions pt-1">
+              <%= f.submit "Register", class: "btn btn-success btn-block btn-lg" %>
+            </div>
+          <% end %>
+
+        </div>
+
+      </div>
+
+      <div class="mt-1 text-center">
+        <%= render "devise/shared/links" %>
+      </div>
+    </div>
+  </div>
+</div>

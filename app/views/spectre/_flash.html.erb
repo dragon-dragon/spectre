@@ -1,0 +1,10 @@
+<div id="flash">
+  <% flash.each do |type, message| %>
+    <div class="message-flash text-center toast toast-<%= type %> alert-dismissible fade in">
+      <div class="container grid-1280">
+        <button class="btn btn-clear float-right" data-dismiss="toast"></button>
+        <%= message.html_safe if message %>
+      </div>
+    </div>
+  <% end %>
+</div>
