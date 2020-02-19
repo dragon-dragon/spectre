@@ -1,28 +1,23 @@
 <% content_for :title, "Password" %>
 <div class="container">
-  <div class="columns background-light pt-10 pb-10">
-    <div class="column hidden-xs col-sm-1 col-md-2 col-lg-3 col-xl-3"></div>
-    <div class="column col-xs-12 col-sm-10 col-md-8 col-lg-6 col-xl-6">
-      <div class="card card-form p-10">
+  <div class="columns background-light pt-1">
+    <div class="column col-4 col-sm-12 col-mx-auto">
+      <div class="card card-form">
+        <div class="card-header">
+          <h2 class="text-script">Change your password</h2>
+        </div>
+        <div class="card-body">
+          <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+            <%#= devise_error_messages! %>
+            <%= f.hidden_field :reset_password_token %>
 
-        <h2 class="text-script">Change your password</h2>
+            <%= f.input :password %>
+            <%= f.input :password_confirmation, hint: "#{@minimum_password_length} characters minimum" %>
 
-        <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
-          <%= devise_error_messages! %>
-          <%= f.hidden_field :reset_password_token %>
-
-          <%= f.input :password %>
-          <%= f.input :password_confirmation, hint: "#{@minimum_password_length} characters minimum" %>
-
-          <%= f.submit "Change my password", class: "btn btn-primary" %>
-        <% end %>
-
-      </div>
-      <div class="pt-10">
-        <div class="divider"></div>
-        <%= render "devise/shared/links" %>
+            <%= f.submit "Change my password", class: "btn btn-primary" %>
+          <% end %>
+        </div>
       </div>
     </div>
-    <div class="column hidden-xs col-sm-1 col-md-2 col-lg-3 col-xl-3"></div>
   </div>
 </div>
