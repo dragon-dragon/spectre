@@ -19,7 +19,7 @@
     color: $light-color;
   }
   &.loading {
-    @extend .btn-primary.loading;
+    @extend .btn-primary, .loading;
   }
 }
 
