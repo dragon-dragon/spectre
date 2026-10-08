@@ -14,9 +14,8 @@ Gem::Specification.new do |s|
   s.description = "Spectre.sass for Rails, with added partials for Devise and Kaminari - https://picturepan2.github.io/spectre/"
   s.license     = "MIT"
 
-  s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
+  s.files = Dir["{app,config,db,lib,vendor}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
   s.add_dependency "rails", ">= 4.2"
-  s.add_dependency "sass-rails", ">= 3.1.0"
   s.add_dependency "autoprefixer-rails"
 end

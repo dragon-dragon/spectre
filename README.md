@@ -23,6 +23,15 @@ Or install it yourself as:
 $ gem install spectre
 ```
 
+Spectre needs a Dart Sass compiler (`sass-rails` and `sassc-rails` are deprecated and no longer supported). Add one of:
+
+```ruby
+gem 'dartsass-rails'      # Rails 7+ / Propshaft, compiles via `bin/rails dartsass:build`
+gem 'dartsass-sprockets'  # Sprockets asset pipeline, drop-in replacement for sass-rails
+```
+
+With `dartsass-rails` the Spectre load path is added for you automatically.
+
 Add an import to your application.scss
 ```sass
 @import "spectre/spectre";

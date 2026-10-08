@@ -1,4 +1,6 @@
 // Layout
+@use "sass:math";
+
 .container {
   margin-left: auto;
   margin-right: auto;
@@ -7,7 +9,7 @@
   width: 100%;
   @extend .clearfix;
 
-  $grid-spacing: ($layout-spacing / ($layout-spacing * 0 + 1)) * $html-font-size;
+  $grid-spacing: math.div($layout-spacing, $layout-spacing * 0 + 1) * $html-font-size;
 
   &.grid-xl {
     max-width: $grid-spacing * 2 + $size-xl;

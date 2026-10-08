@@ -206,7 +206,7 @@
     box-shadow: -.25em .2em, .25em .2em;
     content: "";
     height: $icon-border-width;
-    top: $icon-border-width/2;
+    top: $icon-border-width*0.5;
     width: .5em;
   }
 }
